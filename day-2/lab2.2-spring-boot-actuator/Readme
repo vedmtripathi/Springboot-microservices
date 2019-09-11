@@ -1,0 +1,82 @@
+****************************************************
+Project Scope:
+
+1. Actuators
+2. Act Sec
+3. Custom Act
+
+
+
+****************************************************
+app endpoints:
+
+custom endpoint
+http://localhost:9090/admin/custom-health
+get error: 	http://localhost:8080/actuator/custom-health
+	
+but bydefault: http://localhost:8080/actuator/custom-health
+	
+	
+Actuator at different port
+http://localhost:9090/admin/info
+	
+Normal Service URL at different port
+http://localhost:8080/hello
+	
+****************************************************	
+TODO:
+
+1. customize an endpoint
+2. customize the endpoints globally
+		endpoints.sensitive=true
+		endpoints.info.sensitive=false
+
+
+
+1. To enable Actuator
+
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+
+2. To enable Actuator Endpoint (hypermedia-based) -- for now skip
+		
+		<dependency>
+        <groupId>org.springframework.hateoas</groupId>
+        <artifactId>spring-hateoas</artifactId>
+</dependency>
+
+3. To enable security -- for now skip
+
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+including the above dependencies will by default provide 
+NOTE: inbuilt form-based authentication with the userid as the user and a randomly generated password
+
+----------------------------------------
+
+and add the below entries in application.properties
+                              
+management.security.enabled=true
+security.basic.enabled=true
+security.user.name=admin
+security.user.password=admin
+
+***** login will be displayed for dump endpoint ****
+user name - user
+password- <generated passwprd in console log>
+****************************************************
+
+
+
+
+****************************************************
+
+NOTE:- by default, all Actuator endpoints are now placed under the /actuator path
+
+## common End point: 
+https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html

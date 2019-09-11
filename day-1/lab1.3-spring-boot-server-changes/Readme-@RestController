@@ -1,0 +1,75 @@
+project scope-
+
+1. custom error page, instead of white label error page
+	http://localhost:9090/checkon/fwe
+2. custom deployment
+3. works with devtools starter(hot deployment)
+4. custom name for application(context-path)
+5. tomcat port changes
+6. container less deployment/ creat FAT JAR/WAR
+
+## ways to change context path:
+1. Using application.properties / yml --> server.servlet.context-path=/<xyz>
+2. Java System Property -->
+	public static void main(String[] args) {
+    System.setProperty("server.servlet.context-path", "/<xyz>");
+    SpringApplication.run(Application.class, args);
+}
+
+3. OS Environment Variable --> set SERVER_SERVLET_CONTEXT_PATH=/<xyz>
+4. Command Line Arguments --> java -jar app.jar --server.servlet.context-path=/<xyz>
+5. Using Java Config -->
+@Bean
+public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory>
+  webServerFactoryCustomizer() {
+    return factory -> factory.setContextPath("/baeldung");
+}
+
+NOTE: Priority Order of Configurations
+1. Java Config
+2. Command Line Arguments
+3. Java System Properties
+4. OS Environment Variables
+5. application.properties in Current Directory
+6. application.properties in the classpath (src/main/resources or the packaged jar file)
+
+## keep the process running even when you logoff the server is to use the nohup command: nohup java -jar <artifact-name>.
+## Stopping spring-boot projects is also no different than stopping a regular process, whether you simply cntrl+c or kill <pid>.
+## get PID --> c:\> netstat -nio
+
+-----------------
+
+Using the @RestController Annotation
+------------------------------------
+
+Spring 4.0 introduced @RestController, a specialized version of the controller which is a convenience 
+annotation that does nothing more than add the @Controller and @ResponseBody annotations. 
+
+By annotating the controller class with @RestController annotation, we no longer need to add @ResponseBody
+to all the request mapping methods. 
+
+The @ResponseBody annotation is active by default.
+
+
+
+Spring 4.3 onwards:
+------------------
+
+
+@GetMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.GET)
+
+
+@PostMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.POST)
+
+
+@PutMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.PUT)
+
+
+@DeleteMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.DELETE)
+
+
+
+
+
+
+

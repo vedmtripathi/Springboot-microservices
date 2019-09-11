@@ -1,0 +1,33 @@
+1. From Rest Client, access the below url 
+http://localhost:8080/greeting
+
+and respond with a JSON representation of a greeting enriched with the simplest possible hypermedia element, a link pointing to the resource itself:
+{
+  "content":"Hello, World!",
+  "_links":{
+    "self":{
+      "href":"http://localhost:8080/greeting?name=World"
+    }
+  }
+}
+
+The response already indicates you can customize the greeting with an optional name parameter in the query string:
+
+2. From Rest Client, access the below url
+http://localhost:8080/greeting?name=User
+
+The name parameter value overrides the default value of "World" and is reflected in the response:
+{
+  "content":"Hello, User!",
+  "_links":{
+    "self":{
+      "href":"http://localhost:8080/greeting?name=User"
+    }
+  }
+}
+
+
+The Greeting resource extends from ResourceSupport class to inherit the add() method. So once we create a link, we can easily set that 
+value to the resource representation without adding any new fields to it.
+
+HttpEntity<T> is a helper object which encapsulates header and body of an HTTP request or response. It can be used as a handler method parameter.

@@ -1,0 +1,46 @@
+access the application:
+----------------------
+
+Swagger details: 
+http://localhost:8080/swagger-resources
+http://localhost:8080/swagger-ui.html
+http://localhost:8080/v2/api-docs
+
+http://localhost:8080/product/list
+
+
+Knowledge:
+---------
+
+There are multiple approaches to documenting your RESTful API
+
+    WADL
+    RESTDocs
+    Swagger or OpenDocs
+
+
+
+Adding Swagger Dependencies
+---------------------------------
+
+Automated JSON API documentation for API's built with Spring
+
+	<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		
+To enable the Swagger 2 we use the annotation @EnableSwagger2.
+
+A Docket bean is defined and using its select() method we get an instance of ApiSelectorBuilder. 
+ApiSelectorBuilder we configure the endpoints exposed by Swagger.
+
+Using the RequestHandlerSelectors and PathSelectors we configure the predicates for selection of 
+RequestHandlers. 

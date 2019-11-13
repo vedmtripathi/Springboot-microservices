@@ -35,7 +35,8 @@ NOTE: Priority Order of Configurations
 
 ## keep the process running even when you logoff the server is to use the nohup command: nohup java -jar <artifact-name>.
 ## Stopping spring-boot projects is also no different than stopping a regular process, whether you simply cntrl+c or kill <pid>.
-## get PID --> c:\> netstat -nio
+## get PID --> netstat -a -n -o
+## kill PID --> taskkill /F /PID <PID>
 
 -----------------
 

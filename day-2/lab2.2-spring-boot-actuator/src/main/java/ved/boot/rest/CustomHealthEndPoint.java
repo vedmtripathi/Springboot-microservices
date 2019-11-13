@@ -24,8 +24,11 @@ public class CustomHealthEndPoint {
 
 	@ReadOperation
 	public CustomHealth health() {
+		
 		Map<String, Object> details = new LinkedHashMap<>();
+		
 		details.put("CustomHealthStatus", "Everything looks good");
+		
 		CustomHealth health = new CustomHealth();
 		health.setHealthDetails(details);
 		return health;

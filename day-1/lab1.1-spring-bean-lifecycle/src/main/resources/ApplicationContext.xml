@@ -9,14 +9,14 @@
 	<context:annotation-config />
 
 
-	<bean id="account" class="demo.Account" scope="prototype"
+	<bean id="account" class="ved.boot.mvc.Account" scope="prototype"
 		init-method="start">
 		<property name="amt">
 			<value>1000</value>
 		</property>
 	</bean>
 
-	<bean class="demo.CustomPostProcessor" />
+	<bean class="ved.boot.mvc.CustomPostProcessor" />
 
 
 </beans>

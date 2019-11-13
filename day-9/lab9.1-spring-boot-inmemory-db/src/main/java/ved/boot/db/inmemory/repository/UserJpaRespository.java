@@ -23,4 +23,18 @@ public interface UserJpaRespository extends JpaRepository<Users, Long>{
 	 * @return
 	 */
     Users findByName(String name);
+    
+    
+    Users findBySalary(String name);
+    
+    
+    
+    
+    // CRUD
+    // C - create - saveXX()  -- 
+    // R - retrieve - findxx()
+    // U - update - savexx() -- CRUD
+    // D - deete - deleteName(String s)
+    
+    
 }

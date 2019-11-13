@@ -22,7 +22,7 @@ public class Account implements BeanNameAware, ApplicationContextAware, Initiali
 	float amt;
 	String beanName;
 	ApplicationContext ctx;
-
+	
 	public Account() {
 		LOG.debug("step1...initialize");
 
@@ -53,22 +53,22 @@ public class Account implements BeanNameAware, ApplicationContextAware, Initiali
 	@SuppressWarnings("restriction")
 	@PostConstruct
 	public void init() {
-		LOG.debug("step6...@PostConstruct");
+		LOG.debug("step5...@PostConstruct");
 	}
 
-	public void setApplicationContext(ApplicationContext arg0) throws BeansException {
+	public void setApplicationContext(ApplicationContext arg0) throws BeansException {  
 		// TODO Auto-generated method stub
 		ctx = arg0;
 		LOG.debug("step4...ApplicationContextAware");
 	}
 
 	public void start() {
-		LOG.debug("step8...custom initialize");
+		LOG.debug("step7...custom initialize");
 	}
 
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
-		LOG.debug("step7...initialize");
+		LOG.debug("step6...initialize");
 
 	}
 

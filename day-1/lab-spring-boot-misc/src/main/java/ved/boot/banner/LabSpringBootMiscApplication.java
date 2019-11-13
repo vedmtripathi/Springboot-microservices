@@ -38,7 +38,7 @@ public class LabSpringBootMiscApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		LOG.debug("CommandLineRunner.... working !!!");
+		LOG.debug("CommandLineRunner.... working treat as init!!!");
 
 	}
 

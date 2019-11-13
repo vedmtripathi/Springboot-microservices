@@ -56,7 +56,7 @@ public class AccountController {
 	 * @param id
 	 * @return
 	 */
-	@GetMapping(value = "/accounts/{id}")
+	@GetMapping(value = "/accounts/{id}") 
 	public Account byId(@PathVariable("id") String id) {
 
 		logger.info("accounts-microservice byId() invoked: " + id);

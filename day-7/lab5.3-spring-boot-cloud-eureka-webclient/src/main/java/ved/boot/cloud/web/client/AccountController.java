@@ -23,6 +23,7 @@ public class AccountController {
 	public String home(){
 		return "index";
 	}
+	
 	@RequestMapping("/accountList")
 	public String accountList(Model model) {
 		

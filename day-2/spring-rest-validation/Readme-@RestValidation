@@ -1,0 +1,83 @@
+Using the @RestController Annotation
+------------------------------------
+
+Spring 4.0 introduced @RestController, a specialized version of the controller which is a convenience 
+annotation that does nothing more than add the @Controller and @ResponseBody annotations. 
+
+By annotating the controller class with @RestController annotation, we no longer need to add @ResponseBody
+to all the request mapping methods. 
+
+The @ResponseBody annotation is active by default.
+
+
+
+Spring 4.3 onwards:
+------------------
+
+
+@GetMapping is a composed annotation that acts as a shortcut for 
+@RequestMapping(method = RequestMethod.GET)
+
+
+@PostMapping is a composed annotation that acts as a shortcut for 
+@RequestMapping(method = RequestMethod.POST)
+
+
+@PutMapping is a composed annotation that acts as a shortcut for 
+@RequestMapping(method = RequestMethod.PUT)
+
+
+@DeleteMapping is a composed annotation that acts as a shortcut for
+ @RequestMapping(method = RequestMethod.DELETE)
+
+===================================================
+
+Project Scope:
+------------- 
+
+1. Bean and Method Validation
+2. Custom Validation
+3. Error Handling
+
+
+ 
+Direct URL:
+-------------
+1. GET : 
+ 		# http://localhost:8080/books/student
+ 		# http://localhost:8080/books/1
+
+2. DELETE : 
+		# http://localhost:8080/books/3
+
+3. POST :
+		# http://localhost:8080/books
+		payload:- 
+				{
+			        "id": 3,
+			        "name": "The Life-Changing Magic of Tidying Up",
+			        "author": "ved",
+			        "price": 9.69
+			    }	
+			    
+4. PATCH : 
+	# http://localhost:8080/books/4
+	payload:- 
+					{
+				        "id": 4,
+				        "name": "The Life-Changing Magic of Tidying Up",
+				        "author": "Santideva",
+				        "price": 9.69
+				    }
+
+
+HTTP ERROR CODE:
+405 - Method not allowed - POST: http://localhost:8080/books/3			    	  		
+ 
+
+
+
+
+
+
+

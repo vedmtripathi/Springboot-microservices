@@ -19,15 +19,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 // this will tell spring that I want custom config to package this app as - WAR
-public class SpringBootWebApplication extends SpringBootServletInitializer {
+//public class SpringBootWebApplication extends SpringBootServletInitializer {
 
-//@ManagedResource("custom:name=spring")
-//public class SpringBootWebApplication {
+@ManagedResource("custom:name=spring")
+public class SpringBootWebApplication {
 	
 	public static void main(String[] args) {
 
 //		set custom context path for application
-//		System.setProperty("server.servlet.context-path", "/yoboot");
+//		System.setProperty("server.servlet.context-path", "/goboot");
 
 		SpringApplication.run(SpringBootWebApplication.class, args);
 	}
@@ -43,9 +43,10 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
 	 * @return
 	 */
 	
-	  @Bean
-	  public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory>
-	  webServerFactoryCustomizer() { return factory ->
-	  factory.setContextPath("/ved"); }
+//	  @Bean
+//	  public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory>
+//	  webServerFactoryCustomizer() { 
+//		  return factory ->
+//	  factory.setContextPath("/checkit"); }
 	 
 }

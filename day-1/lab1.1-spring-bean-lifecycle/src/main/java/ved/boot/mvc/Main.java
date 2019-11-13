@@ -12,7 +12,7 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		ApplicationContext factory = new ClassPathXmlApplicationContext("lab1.1-spring-bean-lifecycle/ApplicationContext.xml");
+		ApplicationContext factory = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
 		Account acc = (Account) factory.getBean("account");
 
